@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "type": "command",
+            "name": "Terraform init",
+            "program": "terraform",
+            "args": [
+                "init",
+            ],
+        },
+        {
+            "type": "command",
+            "name": "Terraform plan",
+            "program": "terraform",
+            "args": [
+                "plan",
+            ],
+            "dependsOn": ["Terraform init"],
+        },
+        {
+            "type": "command",
+            "name": "Terraform apply",
+            "program": "terraform",
+            "args": [
+                "apply",
+                "--auto-approve"
+            ],
+            "dependsOn": ["Terraform plan"],
+        },
+        
+    ]
+}
